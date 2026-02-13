@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Happy Valentine's Day 💝</title>
+    <meta name="description" content="A special Valentine's gift, crafted with love.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💝</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts Particle Canvas -->
+    <canvas id="hearts-canvas"></canvas>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-heart">
+            <svg viewBox="0 0 100 100" class="heart-svg">
+                <path
+                    d="M50 88 C25 65 5 50 5 30 C5 15 17 5 30 5 C38 5 45 9 50 15 C55 9 62 5 70 5 C83 5 95 15 95 30 C95 50 75 65 50 88Z" />
+            </svg>
+        </div>
+        <p class="preloader-text">Preparing something special for you...</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Animated aurora gradient layers -->
+        <div class="hero-aurora">
+            <div class="aurora-layer aurora-1"></div>
+            <div class="aurora-layer aurora-2"></div>
+            <div class="aurora-layer aurora-3"></div>
+        </div>
+
+        <!-- Decorative floating rings -->
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+        <div class="hero-ring hero-ring-3"></div>
+
+        <!-- Corner ornaments -->
+        <div class="hero-ornament top-left">❦</div>
+        <div class="hero-ornament top-right">❦</div>
+        <div class="hero-ornament bottom-left">❦</div>
+        <div class="hero-ornament bottom-right">❦</div>
+
+        <!-- Floating rose petals -->
+        <div class="hero-petals" id="hero-petals"></div>
+
+        <!-- Glowing heart centerpiece -->
+        <div class="hero-heart-glow">
+            <div class="heart-glow-ring ring-1"></div>
+            <div class="heart-glow-ring ring-2"></div>
+            <div class="heart-glow-ring ring-3"></div>
+            <svg class="hero-heart-svg" viewBox="0 0 100 100" width="100" height="100">
+                <defs>
+                    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#F2A0B3;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#E8788A;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#C85A7C;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="heartShadow">
+                        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F2A0B3" flood-opacity="0.6" />
+                    </filter>
+                </defs>
+                <path
+                    d="M50 88 C25 65 5 50 5 30 C5 15 17 5 30 5 C38 5 45 9 50 15 C55 9 62 5 70 5 C83 5 95 15 95 30 C95 50 75 65 50 88Z"
+                    fill="url(#heartGrad)" filter="url(#heartShadow)" />
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-date hero-anim" data-anim-delay="0">14 · 02 · 2026</p>
+            <h1 class="hero-title">
+                <span class="title-line script-font hero-anim" data-anim-delay="1">Happy</span>
+                <span class="title-line display-font hero-anim" data-anim-delay="2">Valentine's</span>
+                <span class="title-line display-font hero-anim" data-anim-delay="3">Day</span>
+            </h1>
+            <div class="hero-divider hero-anim" data-anim-delay="4">
+                <span class="divider-line"></span>
+                <svg class="divider-heart" viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+                <span class="divider-line"></span>
+            </div>
+            <p class="hero-subtitle hero-anim" data-anim-delay="5">Untuk seseorang yang sangat spesial di hatiku</p>
+            <a href="#letter" class="hero-cta hero-anim" data-anim-delay="6">
+                <span class="cta-glow"></span>
+                <span class="cta-text">Buka Surat Cinta</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 16l-6-6h12z" />
+                </svg>
+            </a>
+            <div class="scroll-indicator hero-anim" data-anim-delay="7">
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+                <p class="scroll-text">Scroll ke bawah</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Menghitung setiap detik untukmu</p>
+            <h2 class="section-title">Menuju Hari Kasih Sayang</h2>
+            <div class="title-underline"><span></span></div>
+        </div>
+
+        <div class="countdown-cards fade-up" data-delay="200">
+            <div class="cd-card">
+                <span class="cd-value" id="cd-days">00</span>
+                <span class="cd-label">Hari</span>
+            </div>
+            <div class="cd-separator">:</div>
+            <div class="cd-card">
+                <span class="cd-value" id="cd-hours">00</span>
+                <span class="cd-label">Jam</span>
+            </div>
+            <div class="cd-separator">:</div>
+            <div class="cd-card">
+                <span class="cd-value" id="cd-minutes">00</span>
+                <span class="cd-label">Menit</span>
+            </div>
+            <div class="cd-separator">:</div>
+            <div class="cd-card">
+                <span class="cd-value" id="cd-seconds">00</span>
+                <span class="cd-label">Detik</span>
+            </div>
+        </div>
+
+        <p class="countdown-message fade-up" data-delay="400" id="countdown-msg">
+            Setiap detik yang berlalu, semakin dekat aku mengucapkan betapa berharganya kamu... 💕
+        </p>
+
+        <!-- Shows when countdown reaches zero -->
+        <div class="countdown-arrived" id="cd-arrived" style="display:none;">
+            <div class="cd-arrived-inner fade-up">
+                <span class="cd-arrived-emoji">🎉💝🎉</span>
+                <h3 class="cd-arrived-title">Selamat Hari Valentine!</h3>
+                <p class="cd-arrived-text">Hari ini adalah hari kita, sayang. Setiap detik bersamamu adalah hadiah
+                    terindah. I love you! 💕</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section id="letter" class="letter-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Dari hatiku yang terdalam</p>
+            <h2 class="section-title">Surat Cinta</h2>
+            <div class="title-underline">
+                <svg viewBox="0 0 200 20" width="200">
+                    <path d="M0 10 Q50 0 100 10 Q150 20 200 10" stroke="currentColor" fill="none" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="letter-wrapper fade-up">
+            <div class="letter-card">
+                <div class="letter-seal">
+                    <svg viewBox="0 0 60 60" width="60" height="60">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="1" />
+                        <path
+                            d="M30 45 C20 35 12 28 12 22 C12 16 16 12 22 12 C25 12 28 14 30 17 C32 14 35 12 38 12 C44 12 48 16 48 22 C48 28 40 35 30 45Z"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <p class="letter-greeting">My Dearest,</p>
+                <p class="letter-body">
+                    Di hari yang penuh cinta ini, aku ingin kamu tahu betapa berartinya kamu bagiku.
+                    Setiap hari bersamamu terasa seperti mimpi yang tak ingin aku bangunkan.
+                </p>
+                <p class="letter-body">
+                    Kamu adalah alasan mengapa aku tersenyum setiap pagi,
+                    mengapa dunia terasa lebih indah, dan mengapa hatiku selalu berdebar
+                    dengan cara yang paling membahagiakan.
+                </p>
+                <p class="letter-body">
+                    Terima kasih telah menjadi sumber kebahagiaan terbesarku.
+                    Terima kasih telah mewarnai hariku dengan tawa dan kehangatan.
+                    Bersama kamu, setiap momen menjadi kenangan yang tak ternilai.
+                </p>
+                <p class="letter-body">
+                    Aku berjanji untuk selalu menjaga hatimu,
+                    seperti kamu telah menjaga hatiku dengan begitu sempurna.
+                </p>
+                <p class="letter-closing">
+                    Selamanya milikmu,<br>
+                    <span class="letter-signature">— With All My Love 💕</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section id="reasons" class="reasons-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Yang membuatmu begitu istimewa</p>
+            <h2 class="section-title">Alasan Aku Mencintaimu</h2>
+            <div class="title-underline">
+                <svg viewBox="0 0 200 20" width="200">
+                    <path d="M0 10 Q50 0 100 10 Q150 20 200 10" stroke="currentColor" fill="none" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="reasons-grid">
+            <div class="reason-card fade-up" data-delay="0">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <circle cx="32" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M16 52 C16 40 24 32 32 32 C40 32 48 40 48 52" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <path d="M28 18 L32 22 L36 18" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Senyumanmu</h3>
+                <p class="reason-text">Satu senyumanmu mampu menerangi hariku yang paling gelap sekalipun</p>
+            </div>
+
+            <div class="reason-card fade-up" data-delay="100">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <path
+                            d="M32 52 C20 42 10 34 10 24 C10 16 16 10 24 10 C28 10 31 12 32 15 C33 12 36 10 40 10 C48 10 54 16 54 24 C54 34 44 42 32 52Z"
+                            fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M26 28 L30 32 L38 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Kebaikan Hatimu</h3>
+                <p class="reason-text">Hatimu yang tulus dan penuh kasih sayang membuat semua orang merasa dicintai</p>
+            </div>
+
+            <div class="reason-card fade-up" data-delay="200">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <circle cx="32" cy="32" r="14" fill="none" stroke="currentColor" stroke-width="2" />
+                        <circle cx="32" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="32" y1="14" x2="32" y2="8" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="32" y1="56" x2="32" y2="50" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="14" y1="32" x2="8" y2="32" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="56" y1="32" x2="50" y2="32" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Cahayamu</h3>
+                <p class="reason-text">Kamu bersinar begitu terang hingga menghangatkan seluruh jiwaku</p>
+            </div>
+
+            <div class="reason-card fade-up" data-delay="300">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <path d="M20 10 L20 54" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M20 10 C30 10 44 14 44 24 C44 34 28 30 20 30" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <path d="M30 38 L42 54 M42 38 L30 54" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Semangatmu</h3>
+                <p class="reason-text">Energi dan semangatmu yang luar biasa selalu membuatku kagum dan terinspirasi</p>
+            </div>
+
+            <div class="reason-card fade-up" data-delay="400">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <path d="M32 8 L38 24 L56 24 L42 34 L46 52 L32 42 L18 52 L22 34 L8 24 L26 24Z" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Keistimewaanmu</h3>
+                <p class="reason-text">Kamu unik dan tak tergantikan, bintang paling terang di langit malamku</p>
+            </div>
+
+            <div class="reason-card fade-up" data-delay="500">
+                <div class="reason-icon">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M32 12 L32 32 L44 40" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M20 8 Q32 2 44 8" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <h3 class="reason-title">Waktu Bersamamu</h3>
+                <p class="reason-text">Setiap detik yang kuhabiskan bersamamu adalah detik paling berharga dalam hidupku
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section id="promises" class="promises-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Janji dari hatiku</p>
+            <h2 class="section-title">Janjiku Untukmu</h2>
+            <div class="title-underline">
+                <svg viewBox="0 0 200 20" width="200">
+                    <path d="M0 10 Q50 0 100 10 Q150 20 200 10" stroke="currentColor" fill="none" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="promises-timeline">
+            <div class="timeline-line"></div>
+
+            <div class="promise-item fade-up" data-delay="0">
+                <div class="promise-dot">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </div>
+                <div class="promise-content">
+                    <h3>Selalu Ada Untukmu</h3>
+                    <p>Di saat senang maupun sedih, aku akan selalu berada di sisimu, menjadi tempatmu bersandar.</p>
+                </div>
+            </div>
+
+            <div class="promise-item fade-up" data-delay="150">
+                <div class="promise-dot">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </div>
+                <div class="promise-content">
+                    <h3>Menjaga Kebahagiaan</h3>
+                    <p>Aku akan selalu berusaha membuatmu tersenyum dan memastikan kamu merasa bahagia setiap hari.</p>
+                </div>
+            </div>
+
+            <div class="promise-item fade-up" data-delay="300">
+                <div class="promise-dot">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </div>
+                <div class="promise-content">
+                    <h3>Mencintaimu Sepenuh Hati</h3>
+                    <p>Cintaku untukmu akan tumbuh setiap hari, tak pernah berkurang, hanya bertambah dalam dan luas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="promise-item fade-up" data-delay="450">
+                <div class="promise-dot">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                </div>
+                <div class="promise-content">
+                    <h3>Membangun Masa Depan</h3>
+                    <p>Bersama kita akan merajut mimpi-mimpi indah dan mewujudkannya satu per satu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Poem Section -->
+    <section id="poem" class="poem-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Puisi dari hatiku</p>
+            <h2 class="section-title">Untukmu, Cintaku</h2>
+            <div class="title-underline"><span></span></div>
+        </div>
+
+        <div class="poem-card fade-up" data-delay="200">
+            <div class="poem-ornament top">❦</div>
+            <div class="poem-body" id="poem-body">
+                <p class="poem-line" data-line="0">Di antara jutaan bintang yang bersinar,</p>
+                <p class="poem-line" data-line="1">Hanya matamu yang mampu menerangi malamku.</p>
+                <p class="poem-line" data-line="2">&nbsp;</p>
+                <p class="poem-line" data-line="3">Di antara ribuan kata yang terucap,</p>
+                <p class="poem-line" data-line="4">Hanya namamu yang terindah di bibirku.</p>
+                <p class="poem-line" data-line="5">&nbsp;</p>
+                <p class="poem-line" data-line="6">Kau adalah alasan di setiap tarikan nafasku,</p>
+                <p class="poem-line" data-line="7">Kau adalah jawaban dari setiap doaku.</p>
+                <p class="poem-line" data-line="8">&nbsp;</p>
+                <p class="poem-line" data-line="9">Jika dunia bertanya mengapa aku tersenyum,</p>
+                <p class="poem-line" data-line="10">Jawabannya sederhana — karena ada kamu.</p>
+                <p class="poem-line" data-line="11">&nbsp;</p>
+                <p class="poem-line" data-line="12">Selamanya dan selamanya lagi,</p>
+                <p class="poem-line" data-line="13">Hatiku hanya milikmu. 💕</p>
+            </div>
+            <div class="poem-cursor" id="poem-cursor">|</div>
+            <div class="poem-ornament bottom">❦</div>
+        </div>
+    </section>
+
+    <!-- Countdown / Special Section -->
+    <section id="special" class="special-section">
+        <div class="special-bg-pattern"></div>
+        <div class="special-content fade-up">
+            <div class="infinity-symbol">
+                <svg viewBox="0 0 200 100" width="120" height="60">
+                    <path d="M50 50 C50 20 20 20 20 50 C20 80 50 80 50 50 C50 20 80 20 80 50 C80 80 50 80 50 50"
+                        fill="none" stroke="currentColor" stroke-width="2" transform="scale(2) translate(5,0)" />
+                </svg>
+            </div>
+            <h2 class="special-title">Cintaku Untukmu</h2>
+            <p class="special-quote">"Di setiap semesta, di setiap kehidupan, aku akan selalu memilihmu."</p>
+            <div class="hearts-row">
+                <span>💕</span><span>💕</span><span>💕</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minigame Section -->
+    <section id="minigame" class="minigame-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Sebuah permainan kecil untukmu</p>
+            <h2 class="section-title">Tangkap Cintaku 💘</h2>
+            <div class="title-underline">
+                <svg viewBox="0 0 200 20" width="200">
+                    <path d="M0 10 Q50 0 100 10 Q150 20 200 10" stroke="currentColor" fill="none" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="game-wrapper fade-up">
+            <p class="game-instruction">Klik hati yang jatuh untuk mengumpulkan cintaku! 💕<br>
+                <span class="game-instruction-small">Kumpulkan <strong>20 hati</strong> untuk membuka pesan
+                    rahasia...</span>
+            </p>
+
+            <div class="game-stats">
+                <div class="game-stat">
+                    <span class="stat-label">Hati Terkumpul</span>
+                    <span class="stat-value" id="game-score">0</span>
+                </div>
+                <div class="game-stat">
+                    <span class="stat-label">Waktu</span>
+                    <span class="stat-value" id="game-timer">30</span>
+                </div>
+                <div class="game-stat">
+                    <span class="stat-label">Terlewat</span>
+                    <span class="stat-value" id="game-missed">0</span>
+                </div>
+            </div>
+
+            <div class="love-meter">
+                <div class="love-meter-label">Love Meter</div>
+                <div class="love-meter-track">
+                    <div class="love-meter-fill" id="love-meter-fill"></div>
+                </div>
+                <div class="love-meter-markers">
+                    <span>0</span>
+                    <span>5</span>
+                    <span>10</span>
+                    <span>15</span>
+                    <span>20 ✨</span>
+                </div>
+            </div>
+
+            <div class="game-area" id="game-area">
+                <div class="game-idle-message" id="game-idle-msg">
+                    <svg viewBox="0 0 64 64" width="48" height="48">
+                        <path
+                            d="M32 56 C18 44 6 34 6 22 C6 14 12 8 20 8 C25 8 29 11 32 15 C35 11 39 8 44 8 C52 8 58 14 58 22 C58 34 46 44 32 56Z"
+                            fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <p>Tekan tombol di bawah untuk mulai!</p>
+                </div>
+            </div>
+
+            <button class="game-btn" id="game-start-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                <span>Mulai Bermain</span>
+            </button>
+
+            <!-- Hidden reward -->
+            <div class="game-reward" id="game-reward">
+                <div class="reward-inner">
+                    <div class="reward-sparkles">✨💖✨</div>
+                    <h3 class="reward-title">Kamu Berhasil! 🎉</h3>
+                    <p class="reward-message">
+                        Seperti kamu yang menangkap setiap hati ini,<br>
+                        kamu juga telah menangkap hatiku sepenuhnya.<br><br>
+                        <em>Aku mencintaimu lebih dari kata-kata yang bisa kuungkapkan.</em>
+                    </p>
+                    <div class="reward-hearts">💕💕💕</div>
+                    <button class="game-btn reward-btn" id="game-play-again">
+                        <span>Main Lagi 💝</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wish Upon a Star Section -->
+    <section id="stars" class="stars-section">
+        <div class="section-header fade-up">
+            <p class="section-label stars-label">✧ Sentuh bintang yang bersinar ✧</p>
+            <h2 class="section-title stars-title">Wish Upon a Star</h2>
+            <div class="title-underline"><span></span></div>
+        </div>
+
+        <p class="stars-instruction fade-up" data-delay="200">
+            Klik bintang-bintang di langit malam untuk membuka harapan dan doaku untukmu... 🌙
+        </p>
+
+        <div class="stars-canvas-wrapper fade-up" data-delay="300">
+            <canvas id="stars-canvas"></canvas>
+            <div class="stars-wish-popup" id="stars-wish-popup">
+                <div class="wish-popup-inner">
+                    <span class="wish-popup-star">⭐</span>
+                    <p class="wish-popup-text" id="wish-popup-text"></p>
+                    <button class="wish-popup-close" id="wish-popup-close">✧</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="stars-counter fade-up" data-delay="400">
+            Bintang ditemukan: <span id="stars-found">0</span> / <span id="stars-total">0</span> ⭐
+        </p>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="wishes-section">
+        <div class="section-header fade-up">
+            <p class="section-label">Harapan terindahku</p>
+            <h2 class="section-title">Doaku Untukmu</h2>
+            <div class="title-underline">
+                <svg viewBox="0 0 200 20" width="200">
+                    <path d="M0 10 Q50 0 100 10 Q150 20 200 10" stroke="currentColor" fill="none" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="wishes-container">
+            <div class="wish-card fade-up" data-delay="0">
+                <div class="wish-number">01</div>
+                <p class="wish-text">Semoga kebahagiaan selalu menyertaimu di setiap langkah yang kamu ambil</p>
+            </div>
+            <div class="wish-card fade-up" data-delay="100">
+                <div class="wish-number">02</div>
+                <p class="wish-text">Semoga setiap impianmu menjadi kenyataan dan setiap doamu terkabulkan</p>
+            </div>
+            <div class="wish-card fade-up" data-delay="200">
+                <div class="wish-number">03</div>
+                <p class="wish-text">Semoga cinta kita semakin kuat seiring berjalannya waktu</p>
+            </div>
+            <div class="wish-card fade-up" data-delay="300">
+                <div class="wish-number">04</div>
+                <p class="wish-text">Semoga kita selalu bisa melewati segala rintangan bersama-sama</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-hearts">
+            <svg viewBox="0 0 100 100" width="80" height="80" class="footer-heart-svg">
+                <path
+                    d="M50 85 C30 65 10 50 10 30 C10 15 20 5 35 5 C42 5 47 9 50 15 C53 9 58 5 65 5 C80 5 90 15 90 30 C90 50 70 65 50 85Z"
+                    fill="currentColor" />
+            </svg>
+        </div>
+        <p class="footer-text">Made with love, just for you</p>
+        <p class="footer-year">Valentine's Day 2026</p>
+        <div class="footer-ornament">
+            <span>✦</span>
+            <span>♥</span>
+            <span>✦</span>
+        </div>
+    </footer>
+
+
+    <!-- Valentine Surprise Popup -->
+    <div class="valentine-popup-overlay" id="valentine-popup" style="display:none;">
+        <div class="valentine-popup-card">
+            <div class="popup-sparkles">
+                <span class="sparkle s1">✦</span>
+                <span class="sparkle s2">💖</span>
+                <span class="sparkle s3">✦</span>
+                <span class="sparkle s4">💕</span>
+                <span class="sparkle s5">✨</span>
+                <span class="sparkle s6">💝</span>
+            </div>
+            <div class="popup-hearts-rain" id="popup-hearts-rain"></div>
+            <div class="popup-content">
+                <div class="popup-emoji-row">💝🌹💝</div>
+                <h2 class="popup-title">
+                    <span class="popup-title-script">Happy</span>
+                    <span class="popup-title-display">Valentine's Day!</span>
+                </h2>
+                <div class="popup-divider">
+                    <span></span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    <span></span>
+                </div>
+                <p class="popup-message">
+                    Sayang, hari ini adalah hari kita! 💕<br>
+                    Terima kasih sudah hadir di hidupku dan menjadi alasan terindah di setiap hariku.<br><br>
+                    <em>"Di antara jutaan orang di dunia ini, hatiku memilih dan akan selalu memilihmu."</em><br><br>
+                    Aku mencintaimu lebih dari yang bisa kuungkapkan dengan kata-kata. Selamat Hari Valentine, cintaku!
+                    🌹💝
+                </p>
+                <div class="popup-hearts-bottom">💕 💕 💕</div>
+                <button class="popup-close-btn" id="popup-close-btn">
+                    <span>Terima Kasih, Sayangku 💕</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Dot Navigation -->
+    <nav class="dot-nav" id="dot-nav">
+        <a href="#hero" class="dot-nav-item active" data-section="hero" aria-label="Hero">
+            <span class="dot"></span>
+            <span class="dot-label">Home</span>
+        </a>
+        <a href="#countdown" class="dot-nav-item" data-section="countdown" aria-label="Countdown">
+            <span class="dot"></span>
+            <span class="dot-label">Countdown</span>
+        </a>
+        <a href="#letter" class="dot-nav-item" data-section="letter" aria-label="Surat Cinta">
+            <span class="dot"></span>
+            <span class="dot-label">Surat Cinta</span>
+        </a>
+        <a href="#reasons" class="dot-nav-item" data-section="reasons" aria-label="Alasan">
+            <span class="dot"></span>
+            <span class="dot-label">Alasan</span>
+        </a>
+        <a href="#promises" class="dot-nav-item" data-section="promises" aria-label="Janji">
+            <span class="dot"></span>
+            <span class="dot-label">Janji</span>
+        </a>
+        <a href="#poem" class="dot-nav-item" data-section="poem" aria-label="Puisi">
+            <span class="dot"></span>
+            <span class="dot-label">Puisi</span>
+        </a>
+        <a href="#special" class="dot-nav-item" data-section="special" aria-label="Cintaku">
+            <span class="dot"></span>
+            <span class="dot-label">Cintaku</span>
+        </a>
+        <a href="#minigame" class="dot-nav-item" data-section="minigame" aria-label="Game">
+            <span class="dot"></span>
+            <span class="dot-label">Game</span>
+        </a>
+        <a href="#stars" class="dot-nav-item" data-section="stars" aria-label="Bintang">
+            <span class="dot"></span>
+            <span class="dot-label">Bintang</span>
+        </a>
+        <a href="#wishes" class="dot-nav-item" data-section="wishes" aria-label="Doa">
+            <span class="dot"></span>
+            <span class="dot-label">Doa</span>
+        </a>
+    </nav>
+
+    <!-- Floating Music Player -->
+    <div class="music-player" id="music-player">
+        <!-- Toggle button (visible when collapsed) -->
+        <button class="player-toggle" id="player-toggle" aria-label="Open music player">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+            </svg>
+            <span class="toggle-pulse"></span>
+        </button>
+
+        <!-- Player body -->
+        <div class="player-body" id="player-body">
+            <!-- Header -->
+            <div class="player-header">
+                <div class="player-header-left">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="player-header-icon">
+                        <path
+                            d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                    </svg>
+                    <span class="player-header-title">Our Playlist</span>
+                </div>
+                <button class="player-close" id="player-close" aria-label="Close player">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Now playing -->
+            <div class="player-now-playing">
+                <div class="player-disc" id="player-disc">
+                    <div class="disc-outer">
+                        <div class="disc-inner">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path
+                                    d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-track-info">
+                    <p class="track-title" id="track-title">Pilih lagu untuk diputar</p>
+                    <p class="track-artist" id="track-artist">—</p>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="player-progress-wrapper">
+                <span class="progress-time" id="progress-current">0:00</span>
+                <div class="player-progress" id="player-progress">
+                    <div class="progress-filled" id="progress-filled"></div>
+                    <div class="progress-thumb" id="progress-thumb"></div>
+                </div>
+                <span class="progress-time" id="progress-duration">0:00</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="player-controls">
+                <button class="ctrl-btn" id="btn-prev" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+                    </svg>
+                </button>
+                <button class="ctrl-btn ctrl-play" id="btn-play" aria-label="Play">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" id="play-icon">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" id="pause-icon"
+                        style="display:none;">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                </button>
+                <button class="ctrl-btn" id="btn-next" aria-label="Next">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+                    </svg>
+                </button>
+                <button class="ctrl-btn ctrl-small" id="btn-repeat" aria-label="Repeat" title="Repeat">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Volume -->
+            <div class="player-volume">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="vol-icon">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                </svg>
+                <input type="range" min="0" max="100" value="70" class="volume-slider" id="volume-slider">
+            </div>
+
+            <!-- Playlist -->
+            <div class="player-playlist" id="player-playlist">
+                <div class="playlist-header">
+                    <span>Playlist</span>
+                    <span class="playlist-count" id="playlist-count">0 lagu</span>
+                </div>
+                <ul class="playlist-list" id="playlist-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
