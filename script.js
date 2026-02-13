@@ -541,6 +541,12 @@ document.addEventListener('visibilitychange', () => {
         { file: 'Music/Nadhif Basalamah - bergema sampai selamanya (Official Lyric Video).mp3' },
         { file: 'Music/Nadhif_Basalamah_-_kota_ini_tak_sama_tanpamu_(mp3.pm).mp3', title: 'Kota Ini Tak Sama Tanpamu', artist: 'Nadhif Basalamah' },
         { file: 'Music/DEABDIL_-_SPONTAN_tanpa_UHUY_(mp3.pm).mp3', title: 'Spontan', artist: 'Deabdil' },
+        { file: 'Music/ANDRA_AND_THE_BACKBONE_-_10_Sempurna_(mp3.pm).mp3', title: 'Sempurna', artist: 'Andra and The Backbone' },
+        { file: 'Music/Ariel_NOAH_-_Moshimo_Mata_Itsuka_(mp3.pm).mp3', title: 'Moshimo Mata Itsuka', artist: 'Ariel NOAH' },
+        { file: 'Music/Bunga_Citra_Lestari_-_Karena_Ku_Cinta_Kau_(mp3.pm).mp3', title: 'Karena Ku Cinta Kau', artist: 'Bunga Citra Lestari' },
+        { file: 'Music/D4vd_-_Here_with_me_(mp3.pm).mp3', title: 'Here With Me', artist: 'D4vd' },
+        { file: 'Music/Sheila_on_7_-_bila_kau_tak_disampingku_(mp3.pm).mp3', title: 'Bila Kau Tak Disampingku', artist: 'Sheila on 7' },
+        { file: 'Music/The_Walters_-_I_Love_You_So_(mp3.pm).mp3', title: 'I Love You So', artist: 'The Walters' },
     ];
 
     // Parse title/artist from filename if not provided
@@ -775,6 +781,28 @@ document.addEventListener('visibilitychange', () => {
     // Initialize
     buildPlaylist();
     loadTrack(0);
+
+    // Autoplay after preloader finishes
+    function tryAutoplay() {
+        playAudio();
+    }
+
+    // Wait for user interaction (browsers block autoplay without interaction)
+    // Try autoplay immediately, if it fails, play on first click/touch
+    setTimeout(() => {
+        tryAutoplay();
+    }, 2500);
+
+    // Fallback: play on first user interaction if autoplay was blocked
+    const startOnInteraction = () => {
+        if (!isPlaying) {
+            playAudio();
+        }
+        document.removeEventListener('click', startOnInteraction);
+        document.removeEventListener('touchstart', startOnInteraction);
+    };
+    document.addEventListener('click', startOnInteraction);
+    document.addEventListener('touchstart', startOnInteraction);
 })();
 
 // ============================================
